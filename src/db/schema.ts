@@ -8,7 +8,7 @@ export const userTable = pgTable('users', {
     
     password: varchar('password', { length: 66 }).notNull(),
     salt: text('salt'),
-    
+    refreshToken:varchar("refresh_token"),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp("updated_at").$onUpdate(() => new Date()).defaultNow().notNull(),
 });
