@@ -1,5 +1,6 @@
 import express from "express";
 import type { Express } from "express";
+import ApiResponse from "../common/utils/api.response.js";
 export function createApplication():Express {
     const app = express();
     
@@ -7,10 +8,7 @@ export function createApplication():Express {
 
     // route
     app.use("/", (req, res) => {
-        res.json(res.json({
-            success: true,
-            message: "hello himanshu"
-        }));
+        ApiResponse.ok(res,"Everthing fine");
     });
 
     return app;
